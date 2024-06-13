@@ -19,7 +19,7 @@ const styles = {
 };
 
 const element = (
-  <div className="seconds" style={styles}>{seconds}</div>
+  <div className="seconds" style={styles}>Now is {seconds}</div>
 );
 
 ReactDOM.render(element, rootElement);
