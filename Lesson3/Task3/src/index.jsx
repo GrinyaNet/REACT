@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import Comment from './Comment';
-//import App from './App';
+
 
 const rootElement = document.querySelector('#root');
 
 const userInfo = {
     name: 'Tom',
-    avatarUrl: 'https://avatars1.githubusercontentent.com'
+    avatarUrl: 'https://avatars1.githubusercontentent.com',
+    author: 'Bob'
 };
 
 ReactDOM.render(<Comment
