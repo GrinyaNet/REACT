@@ -1,5 +1,7 @@
 import React from 'react';
 import './comment.scss';
+import './commentText.scss';
+import './commentDate.scss';
 import moment from 'moment';
 import UserInfo from './UserInfo';
 
