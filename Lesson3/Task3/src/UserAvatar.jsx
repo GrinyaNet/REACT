@@ -7,4 +7,3 @@ const UserAvatar = props => {
 }
 
 export default UserAvatar;
-//alt={props.name}
