@@ -1,10 +1,12 @@
 import React from "react";
 import Comment from "./Comment";
+import UserAvatar from "./Avatar";
 
-const userInfo = {
+
+ const userInfo = {
     name: 'Tom',
-    avatarUrl: 'https://avatarsl.githubusercontent.com'
-};
+     avatarUrl: 'https://avatarsl.githubusercontent.com'
+ };
 
 
 const App = () => {
