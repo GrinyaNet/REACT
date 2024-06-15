@@ -9,8 +9,9 @@ const rootElement = document.querySelector('#root');
 
 const userInfo = {
     firstName: 'John',
-    lastName: 'Doe',
-    birthDate: new Date('2019-01-01T11:32:19.566Z')
+    lastName: 'Doe',    
+    birthDate: '1991-01-17T11:11:11.819Z'
+    
 };
 
-ReactDOM.render(<UserData user={userInfo} data={userInfo.birthDate}/>, rootElement);
+ReactDOM.render(<UserData user={userInfo} date={userInfo.birthDate}/>, rootElement);

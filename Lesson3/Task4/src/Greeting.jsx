@@ -1,17 +1,11 @@
 import React from 'react';
 import moment from 'moment';
 
-
-const formatDate = date => moment(date);
-//const formatDate = date => moment(date).format('DD MM YYYY');
-// const m = moment(date);
-// const resultData = moment();
-// const ddd = resultData.diff(m);
-// console.log(ddd);
+const formatDate = date => moment().diff(moment(date), 'year');
 
  const UserData = (props) => {
   return (
-    <div className="greeting">{`My name is`} {props.user.firstName} {props.user.lastName} {`. I am`} {moment().diff(formatDate(props.date), "year")} {`years old`}</div>
+    <div className="greeting">{`My name is`} {props.user.firstName} {props.user.lastName} {`. I am`} {formatDate(props.date)} {`years old`}</div>
   
   );
 };
