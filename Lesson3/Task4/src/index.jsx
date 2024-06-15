@@ -11,7 +11,9 @@ const userInfo = {
     firstName: 'John',
     lastName: 'Doe',    
     birthDate: '1991-01-17T11:11:11.819Z'
+    //birthDate: new Date('1991-01-17T11:11:11.819Z')
     
 };
 
-ReactDOM.render(<UserData user={userInfo} date={userInfo.birthDate}/>, rootElement);
+//ReactDOM.render(<UserData {...userInfo.firstName [userInfo.lastName ] }/>, rootElement);
+ReactDOM.render(<UserData user={userInfo} date={userInfo.birthDate} />, rootElement);
