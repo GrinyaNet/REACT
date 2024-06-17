@@ -14,4 +14,5 @@ const userData = {
     birthPlace: 'London',
   };
 
-ReactDOM.render(<UserData user={userData} date={userData.birthDate}/>, rootElement);
+//ReactDOM.render(<UserData userData={userData} birthDate={userData.birthDate}/>, rootElement);
+ReactDOM.render(<UserData user={userData} />, rootElement);
