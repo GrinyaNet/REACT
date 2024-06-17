@@ -15,4 +15,4 @@ const userData = {
   };
 
 //ReactDOM.render(<UserData userData={userData} birthDate={userData.birthDate}/>, rootElement);
-ReactDOM.render(<UserData user={userData} />, rootElement);
+ReactDOM.render(<UserData userData={userData} />, rootElement);
