@@ -1,7 +1,7 @@
 import React from "react";
 
 class GoodButton extends React.Component {
-    handleClick() {
+    handleClick(e) {
 alert('Good job!');
     }
 render () {
