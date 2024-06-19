@@ -3,7 +3,7 @@ import React from "react";
 class GoodButton extends React.Component {
     handleClick(event) {
         
-alert(event.target.lastChild.nodeValue);
+alert(event.target.textContent);
     }
 render () {
     return (
