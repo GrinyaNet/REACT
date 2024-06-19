@@ -1,9 +1,9 @@
 import React from "react";
 
 class GoodButton extends React.Component {
-    handleClick(event) {
+    handleClick(e) {
         
-alert(event.target.lastChild.nodeValue);
+alert(e.target.lastChild.nodeValue);
     }
 render () {
     return (
