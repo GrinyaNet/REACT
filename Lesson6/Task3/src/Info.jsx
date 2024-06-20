@@ -6,7 +6,7 @@ const Info = ({info}) => {
             return null;
         }
 return (
-    <div className=".info">{info}</div>
+    <div className=".message">{info}</div>
 );
 };
 
