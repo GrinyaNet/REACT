@@ -1,14 +1,14 @@
 import React from "react";
 import Auth from "./Auth.jsx";
 
-const Login = ({onLogin}) => {
+const Logout = ({onLogout}) => {
  //onLogin = handleLogin();
 
 //render() {
     return (
-        <button onClick={onLogin}>Login</button>
+        <button onClick={onLogout}>Logout</button>
     )
 //}
 };
 
-export default Login
+export default Logout

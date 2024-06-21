@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Greeting from "./Greeting.jsx";
 import Login from "./Login.jsx";
+import Logout from "./Logout.jsx";
 
 class Auth extends Component {
     constructor(props) {
@@ -29,10 +30,10 @@ isLoggetIn: false,
 
         if (this.state.isLoggetIn) {
             
-            button = <button onClick={this.handleLogout}>Logout</button>
+            button = <Logout onLogout={this.handleLogout} />;
 
         } else {
-            button = <button onClick={this.handleLogin}>Login</button>;
+            button = <Login onLogin={this.handleLogin} />;
             
         }
 
