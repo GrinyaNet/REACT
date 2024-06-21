@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Status from './Status.jsx';
+import Autch from './Autch.jsx';
 
 
 
 const rootElement = document.querySelector('#root');
 
 
-ReactDOM.render(<Status  />, rootElement);
+ReactDOM.render(<Autch  />, rootElement);
