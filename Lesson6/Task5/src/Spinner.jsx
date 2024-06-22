@@ -1,9 +1,9 @@
 import React from 'react';
 
- const Spinner = (size) => {
+ const Spinner = ({size}) => {
   return (
     
-    <span class="spinner"></span>
+    <span className="spinner"></span>
   
 );
 };

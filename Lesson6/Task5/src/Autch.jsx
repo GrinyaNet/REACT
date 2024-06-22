@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-//import Greeting from "./Greeting.jsx";
+import React, { Component, useEffect } from "react";
 import Login from "./Login.jsx";
 import Logout from "./Logout.jsx";
+import Spinner from "./Spinner.jsx";
 
 class Auth extends Component {
     constructor(props) {
@@ -13,35 +13,36 @@ class Auth extends Component {
     }
 
 handleLogin = () => {
+    
     this.setState({
 isLoggetIn: true,
     });
+           
 }
 
 handleLogout = () => {
     this.setState({
 isLoggetIn: false,
     });
+    
 }
 
     render() {
 
         let button;
 
-        if (this.state.isLoggetIn) {
+        if (this.state.isLoggetIn) {            
             
-            button = <Logout onClick={this.handleLogout} />
+            button = <Spinner />               
+            setTimeout(button = <Logout onLogout={this.handleLogout} />, 4000);
 
         } else {
-            button = <Login onClick={this.handleLogin} />
+            button = <Login onLogin={this.handleLogin} />
             
         }
 
-        return (
-            //<div className="panel">
-                //<Greeting isLoggetIn={this.state.isLoggetIn}/>
-                <div>{button}</div>
-           // </div>
+        return (            
+                <div>{button}</div>           
         );
     }
 }
