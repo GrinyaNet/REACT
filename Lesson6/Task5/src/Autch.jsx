@@ -1,9 +1,10 @@
-import React, { Component, useEffect } from "react";
+import React, { Component, useState, useEffect } from "react";
 import Login from "./Login.jsx";
 import Logout from "./Logout.jsx";
 import Spinner from "./Spinner.jsx";
 
 class Auth extends Component {
+    const [isVisible, setIsVisible] = useState(true);
     constructor(props) {
         super(props);
 
@@ -11,7 +12,7 @@ class Auth extends Component {
             isLoggetIn: false,
         };
     }
-
+    
 handleLogin = () => {
     
     this.setState({
@@ -33,8 +34,16 @@ isLoggetIn: false,
 
         if (this.state.isLoggetIn) {            
             
-            button = <Spinner />               
-            setTimeout(button = <Logout onLogout={this.handleLogout} />, 4000);
+            button = <Spinner /> 
+            useEffect(() => {
+                const timeoutId = setTimeout(() => {
+                    setIsVisible(false);
+//                    button = <Logout onLogout={this.handleLogout} />
+                }, 2000);
+            
+                return () => clearTimeout(timeoutId);
+              }, []);              
+            
 
         } else {
             button = <Login onLogin={this.handleLogin} />
@@ -42,7 +51,8 @@ isLoggetIn: false,
         }
 
         return (            
-                <div>{button}</div>           
+                <div>{button}</div>
+                {isVisible && <Logout onLogout={this.handleLogout} />}
         );
     }
 }
