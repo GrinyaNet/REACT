@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Autch from './Autch.jsx';
+import Autch from './Auth.jsx';
 
 
 

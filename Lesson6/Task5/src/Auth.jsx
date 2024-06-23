@@ -3,7 +3,7 @@ import Login from "./Login.jsx";
 import Logout from "./Logout.jsx";
 import Spinner from "./Spinner.jsx";
 
-class Autсh extends Component {
+class Auth extends Component {
     const [isVisible, setIsVisible] = useState(true);
     constructor(props) {
         super(props);
@@ -57,7 +57,7 @@ isLoggetIn: false,
     }
 }
 
-export default Autсh;
+export default Auth;
 
 //button = <button onClick={this.handleLogout}>Logout</button>;
 //button = <button onClick={this.handleLogin}>Login</button>;
