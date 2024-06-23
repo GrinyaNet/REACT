@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Autch from './Auth.jsx';
+import Auth from './Auth.jsx';
 
 
 
 const rootElement = document.querySelector('#root');
 
 
-ReactDOM.render(<Autch  />, rootElement);
+ReactDOM.render(<Auth  />, rootElement);
