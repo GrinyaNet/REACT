@@ -34,7 +34,9 @@ isLoggetIn: false,
 
         if (this.state.isLoggetIn) {            
             
-            button = <Spinner /> 
+            button = <Spinner />,
+            //setTimeout('<Logout onLogout={this.handleLogout} />', 5000)
+            // button = <Logout onLogout={this.handleLogout} />
             useEffect(() => {
                 const timeoutId = setTimeout(() => {
                     setIsVisible(false);
@@ -52,7 +54,7 @@ isLoggetIn: false,
 
         return (            
                 <div>{button}</div>
-                {isVisible && <Logout onLogout={this.handleLogout} />}
+                //{isVisible && <Logout onLogout={this.handleLogout} />}
         );
     }
 }
