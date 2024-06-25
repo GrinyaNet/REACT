@@ -1,81 +1,53 @@
-import React, { Component, useState, useEffect } from "react";
-import Login from "./Login.jsx";
-import Logout from "./Logout.jsx";
-import Spinner from "./Spinner.jsx";
+import React, { Component, useState, useEffect } from 'react';
+import Login from './Login.jsx';
+import Logout from './Logout.jsx';
+import Spinner from './Spinner.jsx';
 
 class Auth extends Component {
+  constructor(props) {
+    super(props);
 
-    constructor(props) {
-        super(props);
+    this.state = {
+      isLoggetIn: false,
+      setTimeOut: false,
+    };
+  }
 
-        this.state = {
-            isLoggetIn: false,
-            setTimeOut: false,
-        };
-    }
-    
-handleLogin = () => {
-    
+  handleLogin = () => {
     this.setState({
-isLoggetIn: true,
-setTimeOut: false,
-
+      isLoggetIn: true,
+      setTimeOut: false,
     });
-           
-}
+  };
 
-handleLogout = () => {
+  handleLogout = () => {
     this.setState({
-isLoggetIn: false,
-setTimeOut: false,
+      isLoggetIn: false,
+      setTimeOut: false,
     });
-    
-}
+  };
 
-handleSetTime = () => {
+  handleSetTime = () => {
     this.setState({
-        //isLoggetIn: true,
-        setTimeOut: true,
-            });
-}
+      setTimeOut: true,
+    });
+  };
 
-    render() {
+  render() {
+    let button;
 
-        let button;
-
-        if (this.state.isLoggetIn) {            
-            
-            button = <Spinner />
-            setTimeout(this.handleSetTime, 2000)
-            if (this.state.setTimeOut)
-                {
-                    button = <Logout onLogout={this.handleLogout} />
-                }
-            //setTimeout('<Logout onLogout={this.handleLogout} />', 5000)
-            // button = <Logout onLogout={this.handleLogout} />
-//             useEffect(() => {
-//                 const timeoutId = setTimeout(() => {
-//                     setIsVisible(false);
-// //                    button = <Logout onLogout={this.handleLogout} />
-//                 }, 2000);
-            
-//                 return () => clearTimeout(timeoutId);
-//               }, []);              
-            
-
-        } else {
-            button = <Login onLogin={this.handleLogin} />
-            
-        }
-
-        return (            
-                <div>{button}</div>
-                //{isVisible && <Logout onLogout={this.handleLogout} />}
-        );
+    if (this.state.isLoggetIn) {
+      button = <Spinner />;
+      setTimeout(this.handleSetTime, 2000);
+      if (this.state.setTimeOut) {
+        button = <Logout onLogout={this.handleLogout} />;
+      }
+    } else {
+      button = <Login onLogin={this.handleLogin} />;
     }
+
+    return <div>{button}</div>;
+  }
 }
 
 export default Auth;
-
-//button = <button onClick={this.handleLogout}>Logout</button>;
-//button = <button onClick={this.handleLogin}>Login</button>;
