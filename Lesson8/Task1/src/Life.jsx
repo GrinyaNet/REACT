@@ -25,7 +25,7 @@ class Life extends Component {
   render() {
     //return console.log('return React element to build DOM');
     return (
-    <div>{this.props.number}</div>,
+    //<div>{this.props.number}</div>,
     console.log('return React element to build DOM')
     )
   }
