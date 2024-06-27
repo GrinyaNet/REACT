@@ -15,7 +15,9 @@ class Life extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
+    if (this.props !== null) {
     console.log('componentDidUpdate(prevProps, prevState): some updates based on new props');
+    }
   }
 
   componentWillUnmount() {
@@ -25,8 +27,7 @@ class Life extends Component {
   render() {
      console.log('return React element to build DOM');
     return (
-    <div>{this.props.number}</div>
-    //console.log('return React element to build DOM')
+    <div>{this.props.number}</div>    
     )
   }
 }
