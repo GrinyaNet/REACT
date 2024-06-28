@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import Dimension from './Dimensions.jsx';
+import User from './User.jsx';
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<Dimension/>, rootElement);
+ReactDOM.render(<User userId="facebook" />, rootElement);
