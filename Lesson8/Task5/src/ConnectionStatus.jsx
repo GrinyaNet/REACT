@@ -2,33 +2,33 @@ import React, { Component } from 'react';
 
 class ConnectionStatus extends Component {
   state = {
-    status: online,
+    status: 'online',
+    classStyle: 'status',
   };
 
   componentDidMount() {
-    this.fetchUser(this.props.userId);
+    window.addEventListener('offline', this.updateOnlineStatus);
+    window.addEventListener('online', this.updateOflineStatus);
   }
 
-  fetchUser = userId => {
-    fetch(`https://api.github.com/users/${userId}`)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({
-          user: data,
-        });
-      });
+  updateOnlineStatus = () => {
+    this.setState({
+      status: 'offline',
+      classStyle: 'status_offline',
+    });
+  };
+
+  updateOflineStatus = () => {
+    this.setState({
+      status: 'online',
+      classStyle: 'status',
+    });
   };
 
   render() {
-    const { user } = this.state;
-    if (!user) {
-      return null;
-    }
-    const { name, location } = user;
-    return (
-      <div className="status status_offline">Offline</div>
-  
-    );
+    const { status, classStyle } = this.state;
+
+    return <div className={classStyle}>{status}</div>;
   }
 }
 
