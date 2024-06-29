@@ -24,12 +24,13 @@ class User extends Component {
     if (!user) {
       return null;
     }
-    const { name, location } = user;
+    const { avatar_url, name, location } = user;
     return (
       <div className="user">
         <img
           alt="User Avatar"
-          src="https://avatars3.githubusercontent.com/u/69631?v=4"
+          src={avatar_url}
+          //src="https://avatars3.githubusercontent.com/u/69631?v=4"
           className="user__avatar"
         />
         <div className="user__info">
