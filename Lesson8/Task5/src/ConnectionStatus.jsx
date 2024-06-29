@@ -7,7 +7,7 @@ class ConnectionStatus extends Component {
   };
 
   componentDidMount() {
-    window.addEventListener('offline', this.updateOflineStatus);    
+    window.addEventListener('offline', this.updateOflineStatus);
     window.addEventListener('online', this.updateOnlineStatus);
     this.updateOflineStatus();
     this.updateOnlineStatus();
