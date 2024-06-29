@@ -7,22 +7,25 @@ class ConnectionStatus extends Component {
   };
 
   componentDidMount() {
-    this.stat = window.addEventListener('offline', this.updateOnlineStatus);
-    this.stat = window.addEventListener('online', this.updateOflineStatus);
+    window.addEventListener('offline', this.updateOflineStatus);    
+    window.addEventListener('online', this.updateOnlineStatus);
+    this.updateOflineStatus();
+    this.updateOnlineStatus();
   }
 
   componentWillUnmount() {
-    clearStat(this.stat);
-}
+    window.removeEventListener('offline', this.updateOflineStatus);
+    window.removeEventListener('online', this.updateOnlineStatus);
+  }
 
-  updateOnlineStatus = () => {
+  updateOflineStatus = () => {
     this.setState({
       status: 'offline',
       classStyle: 'status_offline',
     });
   };
 
-  updateOflineStatus = () => {
+  updateOnlineStatus = () => {
     this.setState({
       status: 'online',
       classStyle: 'status',

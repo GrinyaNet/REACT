@@ -10,11 +10,12 @@ class Life extends Component {
     console.log('componentDidMount: API calls, subscriptions');
   }
 
-  shouldComponentUpdate(nextProps, nexState) {
+  shouldComponentUpdate() {
     console.log('shouldComponentUpdate(nextProps, nextState): decide to render or not to render');
+    return true;
   }
 
-  componentDidUpdate(prevProps, prevState) {    
+  componentDidUpdate() {
     console.log('componentDidUpdate(prevProps, prevState): some updates based on new props');
   }
 
@@ -23,10 +24,8 @@ class Life extends Component {
   }
 
   render() {
-     console.log('return React element to build DOM');
-    return (
-    <div>{this.props.number}</div>    
-    )
+    console.log('return React element to build DOM');
+    return <div className="number">{this.props.number}</div>;
   }
 }
 
