@@ -10,13 +10,13 @@ class UserForm extends Component {
     console.log(formData);
   };
 
-  setRef = node => {
+  onSubmit = node => {
     this.formRef = node;
   };
 
   render() {
     return (
-      <form ref={this.setRef} className="login-form" onSubmit={this.handleSubmit}>
+      <form ref={this.onSubmit} className="login-form" onSubmit={this.handleSubmit}>
         <h1 className="form-title">Profile</h1>
 
         <div className="form-control">
