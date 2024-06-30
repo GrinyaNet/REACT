@@ -22,8 +22,7 @@ handleChange = event => {
 }
 
 handleSubmit = event => {
-  event.preventDefault();
-  console.log(this.state);
+  event.preventDefault();  
 }
   
 
