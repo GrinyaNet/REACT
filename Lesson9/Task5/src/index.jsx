@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
-import UserForm from './UserForm.jsx';
+import Game from './Game';
+
 
 const rootElement = document.querySelector('#root');
 
-ReactDOM.render(<UserForm />, rootElement);
+ReactDOM.render(<Game />, rootElement);
