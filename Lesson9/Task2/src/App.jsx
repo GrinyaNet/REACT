@@ -5,7 +5,7 @@ import UserForm from './UserForm.jsx';
 
 const App = () => {
 
-  onSubmit = formData => {
+  createUser = formData => {
         console.log(formData);
       };
 
