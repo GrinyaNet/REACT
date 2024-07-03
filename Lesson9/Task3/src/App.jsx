@@ -5,12 +5,12 @@ import UserForm from './UserForm.jsx';
 
 const App = () => {
 
-  onSubmit = formData => {
+ const onSubmit = formData => {
         console.log(formData);
       };
 
   return (
-    <UserForm onSubmit={this.onSubmit} />
+    <UserForm onSubmit={onSubmit} />
   );
 };
 
