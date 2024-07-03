@@ -23,7 +23,7 @@ handleChange = event => {
 
 handleSubmit = event => {
   event.preventDefault();
-  this.props.createUser(this.state);
+  this.props.onSubmit(this.state);
   //console.log(this.state);
 }
   
