@@ -22,7 +22,9 @@ handleChange = event => {
 }
 
 handleSubmit = event => {
-  event.preventDefault();  
+  event.preventDefault();
+  this.props.createUser(this.state);
+  //console.log(this.state);
 }
   
 
