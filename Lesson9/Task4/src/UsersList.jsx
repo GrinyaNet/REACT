@@ -6,10 +6,12 @@ class UsersList extends Component {
   state = {
     value: '',
     users: this.props.users,
+    count: 0,
   };
 
   filterUser = event => {
     let usersList;
+    let count;
     this.setState({ value: event.target.value });
     if (!event.target.value) {
       return this.setState({ users: this.props.users });
@@ -17,7 +19,9 @@ class UsersList extends Component {
       usersList = this.state.users
         .slice()
         .filter(({ name }) => name.toLowerCase().includes(filterText.toLowerCase()));
-      return this.setState({ users: usersList });
+      count = usersList.lenght;
+
+      return this.setState({ users: usersList, count: count });
     }
   };
 
@@ -25,7 +29,7 @@ class UsersList extends Component {
     return (
       <div>
         <div className="filter">
-          <Filter />
+          <Filter filterText={this.state.value} count={this.state.count}/>
         </div>
 
         <ul className="users">
