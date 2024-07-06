@@ -10,6 +10,13 @@ class UsersList extends Component {
     test: 'HHH',
   };
 
+  handleChange = (value) => {
+    console.log('state');
+    this.setState({
+      value: value,
+    })
+  }
+
   userFilter = event => {
     let usersList;
     let count;
@@ -30,7 +37,7 @@ class UsersList extends Component {
     return (
       <div>
         <div className="filter">
-          <Filter filterText={this.state.value} count={this.state.count} onChange={this.userFilter}/>
+          <Filter filterText={this.state.value} count={this.state.count} state={this.handleChange}/>
         </div>
 
         <ul className="users">
@@ -45,8 +52,3 @@ class UsersList extends Component {
 
 export default UsersList;
 
-{/* <Filter
-          count={usersToDisplay.length}
-          onChange={this.handleChange}
-          filterText={filterText}
-        /> */}
