@@ -1,14 +1,11 @@
 import React from 'react';
 //import UsersList from './UsersList';
 
-const Filter = ({ filterText, count, state}) => {
-  
- const onChange = (event) => {
+const Filter = ({ filterText, count, state }) => {
+  const onChange = event => {
     console.log('jjjjj');
-    state(event.target.value)
-    // let i = this.value;
-    // console.log(i);
-  }
+    state(event.target.value);
+  };
   return (
     <>
       <span className="filter__count">{count}</span>

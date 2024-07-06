@@ -10,34 +10,52 @@ class UsersList extends Component {
     test: 'HHH',
   };
 
-  handleChange = (value) => {
-    console.log('state');
+  handleChange = value => {    
     this.setState({
       value: value,
-    })
-  }
+    });
+  };
 
-  userFilter = event => {
+  // userFilter = event => {
+  //   console.log('Filter');
+  //   let usersList;
+  //   let count;
+  //   //this.setState({ value: event.target.value });
+  //   if (!this.state.value) {
+  //     return this.setState({ users: this.props.users });
+  //   } else {
+  //     usersList = this.state.users
+  //       .slice()
+  //       .filter(({ name }) => name.toLowerCase().includes(filterText.toLowerCase()));
+  //     count = usersList.lenght;
+
+  //     return this.setState({ users: usersList, count: count });
+  //   }
+  // };
+
+  render() {
+console.log('Render');    
     let usersList;
     let count;
-    this.setState({ value: event.target.value });
-    if (!event.target.value) {
-      return this.setState({ users: this.props.users });
+    //this.setState({ value: event.target.value });
+    if (!this.state.value) {
+       this.setState({ users: this.props.users });
     } else {
       usersList = this.state.users
         .slice()
         .filter(({ name }) => name.toLowerCase().includes(filterText.toLowerCase()));
       count = usersList.lenght;
 
-      return this.setState({ users: usersList, count: count });
+       this.setState({ users: usersList, count: count });
     }
-  };
-
-  render() {
     return (
       <div>
         <div className="filter">
-          <Filter filterText={this.state.value} count={this.state.count} state={this.handleChange}/>
+          <Filter
+            filterText={this.state.value}
+            count={this.state.count}
+            state={this.handleChange}
+          />
         </div>
 
         <ul className="users">
@@ -51,4 +69,3 @@ class UsersList extends Component {
 }
 
 export default UsersList;
-
