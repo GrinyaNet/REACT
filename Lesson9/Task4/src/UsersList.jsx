@@ -20,7 +20,7 @@ class UsersList extends Component {
 
   handleChange = event => {    
     this.setState({
-      filterText: event.target.value.toLowerCase,
+      filterText: event.target.value.toLowerCase(),
     });
   };
 
