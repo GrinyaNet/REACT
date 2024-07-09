@@ -4,62 +4,56 @@ import Filter from './Filter.jsx';
 
 class UsersList extends Component {
   state = {
-    value: '',
-    users: this.props.users,
-    count: 0,
-    test: 'HHH',
+    filterText: '',
+    //value: '',
+    //users: this.props.users,
+    //count: 0,
+    
   };
 
-  handleChange = value => {    
+  
+  // handleChange = value => {    
+  //   this.setState({
+  //     value: value,
+  //   });
+  // };
+
+  handleChange = event => {    
     this.setState({
-      value: value,
+      filterText: event.target.value.toLowerCase,
     });
   };
 
-  // userFilter = event => {
-  //   console.log('Filter');
-  //   let usersList;
-  //   let count;
-  //   //this.setState({ value: event.target.value });
-  //   if (!this.state.value) {
-  //     return this.setState({ users: this.props.users });
-  //   } else {
-  //     usersList = this.state.users
-  //       .slice()
-  //       .filter(({ name }) => name.toLowerCase().includes(filterText.toLowerCase()));
-  //     count = usersList.lenght;
-
-  //     return this.setState({ users: usersList, count: count });
-  //   }
-  // };
+ 
 
   render() {
-console.log('Render');    
-    let usersList;
-    let count;
-    //this.setState({ value: event.target.value });
-    if (!this.state.value) {
-       this.setState({ users: this.props.users });
-    } else {
-      usersList = this.state.users
-        .slice()
-        .filter(({ name }) => name.toLowerCase().includes(filterText.toLowerCase()));
-      count = usersList.lenght;
+const { users } = this.props;
+const { filterText } = this.state;
+const usersToDisplay = users.filter(({ name }) => name.toLowerCase().includes(filterText));
+// console.log('Render');    
+//     let usersList;
+//     let count;
+//     //this.setState({ value: event.target.value });
+//     if (!this.state.value) {
+//        this.setState({ users: this.props.users });
+//     } else {
+//       usersList = this.state.users
+//         .slice()
+//         .filter(({ name }) => name.toLowerCase().includes(filterText.toLowerCase()));
+//       count = usersList.lenght;
 
-       this.setState({ users: usersList, count: count });
-    }
+//        this.setState({ users: usersList, count: count });
+//     }
     return (
-      <div>
-        <div className="filter">
+      <div>        
           <Filter
-            filterText={this.state.value}
-            count={this.state.count}
-            state={this.handleChange}
-          />
-        </div>
+            filterText={filterText}
+            count={usersToDisplay.length}
+            onChange={this.handleChange}
+          />        
 
         <ul className="users">
-          {this.state.users.map(user => (
+          {usersToDisplay.map(user => (
             <User key={user.id} {...user} />
           ))}
         </ul>
