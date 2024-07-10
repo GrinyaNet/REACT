@@ -1,37 +1,38 @@
 import React, { Component, useId } from 'react';
-import UserProfile from './UserProfile.jsx';
-import UserMenu from './UserMenu.jsx';
+import ShoppingCart from './ShoppingCart.jsx';
+import Profile from './Profile.jsx';
 
-//class App extends Component {
-class Page extends Component {
+class App extends Component {
+//class Page extends Component {
   state = {
-    userDate: null,
+    userData: {
+      firstName: 'Tom',
+      lastName: 'Form',
+    },
   };
 
-  componentDidMount() {
-    this.fetchUserData(this.props.userId);
-  }
-
-  fetchUserData = userId => {
-    const userUrl = `https://api.github.com/users/${userId}`;
-    fetch(userUrl)
-      .then(response => response.json())
-      .then(userDate =>
-        this.setState({
-          userDate,
-        }),
-      );
+  handleChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      userData: {
+        ...this.state.userData,
+        [name]: value,
+      },
+    });
   };
 
   render() {
+    const {userData} = this.state;
     return (
       <div className="page">
-        <header className="header">
-          <UserMenu userDate={this.state.userDate} />
-        </header>
-        <UserProfile userDate={this.state.userDate} />
+        <h1 class="title">{`Hello, ${userData.firstName} ${userData.lastName}`}</h1>
+        <main class="content">
+          <ShoppingCart userDate={userDate} />
+
+          <Profile userDate={userDate} handleChange={handleChange} />
+        </main>
       </div>
     );
   }
 }
-export default Page;
+export default App;
