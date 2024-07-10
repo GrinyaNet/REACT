@@ -8,13 +8,13 @@ const UserMenu = ({userDate}) => {
 const { name, avatar_url } = userDate;
 
   return (
-    <div class="menu">
-      <span class="menu__greeting">{name}</span>
+    <div className="menu">
+      <span className="menu__greeting">{name}</span>
       <img
         alt="User Avatar"
         src={avatar_url}
         //src="https://avatars1.githubusercontent.com/u/9919?v=4"
-        class="menu__avatar"
+        className="menu__avatar"
       />
     </div>
   );

@@ -2,21 +2,21 @@ import React, { Component } from 'react';
 
 class UserProfile extends Component {
   render() {
-    if (!this.state.userDate) {
+    if (!this.props.userDate) { //state на props
       return null;
     }
-    const { name, location, avatar_url } = this.state.userDate;
+    const { name, location, avatar_url } = this.props.userDate; //state на props
     return (
-      <div class="user">
+      <div className="user">
         <img
           alt="User Avatar"
           src={avatar_url}
           //src="https://avatars1.githubusercontent.com/u/9919?v=4"
-          class="user__avatar"
+          className="user__avatar"
         />
-        <div class="user__info">
-          <span class="user__name">{name}</span>
-          <span class="user__location">{location}</span>
+        <div className="user__info">
+          <span className="user__name">{name}</span>
+          <span className="user__location">{location}</span>
         </div>
       </div>
     );

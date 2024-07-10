@@ -2,8 +2,8 @@ import React, { Component, useId } from 'react';
 import UserProfile from './UserProfile.jsx';
 import UserMenu from './UserMenu.jsx';
 
-//class App extends Component {
-class Page extends Component {
+class App extends Component {
+//class Page extends Component {
   state = {
     userDate: null,
   };
@@ -34,4 +34,4 @@ class Page extends Component {
     );
   }
 }
-export default Page;
+export default App;
