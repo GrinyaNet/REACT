@@ -25,11 +25,11 @@ class App extends Component {
     const {userData} = this.state;
     return (
       <div className="page">
-        <h1 class="title">{`Hello, ${userData.firstName} ${userData.lastName}`}</h1>
-        <main class="content">
-          <ShoppingCart userDate={userDate} />
+        <h1 className="title">{`Hello, ${userData.firstName} ${userData.lastName}`}</h1>
+        <main className="content">
+          <ShoppingCart userDate={userData.userDate} />
 
-          <Profile userDate={userDate} handleChange={handleChange} />
+          <Profile userDate={userData.userDate} handleChange={this.handleChange} />
         </main>
       </div>
     );

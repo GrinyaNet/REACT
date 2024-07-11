@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 class UserProfile extends Component {
   render() {
-    if (!this.props.userDate) { //state на props
+    if (!this.props.userDate) { 
       return null;
     }
-    const { name, location, avatar_url } = this.props.userDate; //state на props
+    const { name, location, avatar_url } = this.props.userDate; 
     return (
       <div className="user">
         <img

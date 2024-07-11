@@ -8,14 +8,14 @@ const UserForm = ({userData, handleChange}) => {
         <input
           type="text"
           name="firstName"
-          class="user-form__input"
+          className="user-form__input"
           value={userData.firstName}
           onChange={handleChange}
         />
         <input
           type="text"
           name="lastName"
-          class="user-form__input"
+          className="user-form__input"
           value={userData.lastName}
           onChange={handleChange}
         />

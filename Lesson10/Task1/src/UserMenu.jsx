@@ -9,7 +9,7 @@ const { name, avatar_url } = userDate;
 
   return (
     <div className="menu">
-      <span className="menu__greeting">{name}</span>
+      <span className="menu__greeting">Hello, {name}</span>
       <img
         alt="User Avatar"
         src={avatar_url}
