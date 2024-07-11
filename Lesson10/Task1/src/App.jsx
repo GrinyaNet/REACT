@@ -12,7 +12,7 @@ class Page extends Component {
     this.fetchUserData(this.props.userId);
   }
 
-  fetchUserData = userId => {
+  fetchUserData = userId => {    
     const userUrl = `https://api.github.com/users/${userId}`;
     fetch(userUrl)
       .then(response => response.json())
