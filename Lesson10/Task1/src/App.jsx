@@ -2,7 +2,6 @@ import React, { Component, useId } from 'react';
 import UserProfile from './UserProfile.jsx';
 import UserMenu from './UserMenu.jsx';
 
-//class App extends Component {
 class Page extends Component {
   state = {
     userDate: null,
@@ -12,7 +11,7 @@ class Page extends Component {
     this.fetchUserData(this.props.userId);
   }
 
-  fetchUserData = userId => {    
+  fetchUserData = userId => {
     const userUrl = `https://api.github.com/users/${userId}`;
     fetch(userUrl)
       .then(response => response.json())

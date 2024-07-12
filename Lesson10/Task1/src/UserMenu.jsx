@@ -1,21 +1,16 @@
 import React from 'react';
 
-const UserMenu = ({userDate}) => {
-    if (!userDate) {
-        return null;
-    }
+const UserMenu = ({ userDate }) => {
+  if (!userDate) {
+    return null;
+  }
 
-const { name, avatar_url } = userDate;
+  const { name, avatar_url } = userDate;
 
   return (
     <div className="menu">
       <span className="menu__greeting">Hello, {name}</span>
-      <img
-        alt="User Avatar"
-        src={avatar_url}
-        //src="https://avatars1.githubusercontent.com/u/9919?v=4"
-        className="menu__avatar"
-      />
+      <img alt="User Avatar" src={avatar_url} className="menu__avatar" />
     </div>
   );
 };
