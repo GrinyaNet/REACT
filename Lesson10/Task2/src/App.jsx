@@ -3,7 +3,6 @@ import ShoppingCart from './ShoppingCart.jsx';
 import Profile from './Profile.jsx';
 
 class App extends Component {
-//class Page extends Component {
   state = {
     userData: {
       firstName: 'Tom',
@@ -22,8 +21,8 @@ class App extends Component {
   };
 
   render() {
-    const {userData} = this.state;
-    
+    const { userData } = this.state;
+
     return (
       <div className="page">
         <h1 className="title">{`Hello, ${userData.firstName} ${userData.lastName}`}</h1>
