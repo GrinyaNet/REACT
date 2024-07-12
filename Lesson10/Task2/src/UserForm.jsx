@@ -4,7 +4,7 @@ const UserForm = ({userData, handleChange}) => {
   
   
     return (
-      <form class="user-form">
+      <form className="user-form">
         <input
           type="text"
           name="firstName"
