@@ -1,11 +1,11 @@
 import React from 'react';
 
-const UserMenu = ({ userDate }) => {
-  if (!userDate) {
+const UserMenu = ({ userData }) => {
+  if (!userData) {
     return null;
   }
 
-  const { name, avatar_url } = userDate;
+  const { name, avatar_url } = userData;
 
   return (
     <div className="menu">

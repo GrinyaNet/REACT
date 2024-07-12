@@ -4,7 +4,7 @@ import UserMenu from './UserMenu.jsx';
 
 class Page extends Component {
   state = {
-    userDate: null,
+    userData: null,
   };
 
   componentDidMount() {
@@ -17,7 +17,7 @@ class Page extends Component {
       .then(response => response.json())
       .then(userDate =>
         this.setState({
-          userDate,
+          userData,
         }),
       );
   };
@@ -26,9 +26,9 @@ class Page extends Component {
     return (
       <div className="page">
         <header className="header">
-          <UserMenu userDate={this.state.userDate} />
+          <UserMenu userData={this.state.userData} />
         </header>
-        <UserProfile userDate={this.state.userDate} />
+        <UserProfile userData={this.state.userData} />
       </div>
     );
   }
