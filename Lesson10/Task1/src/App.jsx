@@ -15,7 +15,7 @@ class Page extends Component {
     const userUrl = `https://api.github.com/users/${userId}`;
     fetch(userUrl)
       .then(response => response.json())
-      .then(userDate =>
+      .then(userData =>
         this.setState({
           userData,
         }),
