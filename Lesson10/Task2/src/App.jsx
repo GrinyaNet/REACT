@@ -23,13 +23,14 @@ class App extends Component {
 
   render() {
     const {userData} = this.state;
+    
     return (
       <div className="page">
         <h1 className="title">{`Hello, ${userData.firstName} ${userData.lastName}`}</h1>
         <main className="content">
-          <ShoppingCart userDate={userData.userData} />
+          <ShoppingCart userData={userData} />
 
-          <Profile userDate={userData.userData} handleChange={this.handleChange} />
+          <Profile userData={userData} handleChange={this.handleChange} />
         </main>
       </div>
     );
