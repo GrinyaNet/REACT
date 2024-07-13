@@ -1,15 +1,34 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
 
+const Dialog = ({ isOpen, children, title, onClose }) => {
+  if (!isOpen) {
+    return null;
+  }
 
-
-<!-- Dialog -->
-  <div class="dialog">
-    <div class="dialog__heading">
-      <h4 class="dialog__title">Recommendation</h4>
-      <button class="dialog__close-btn">+</button>
+  return (
+    <div className="dialog">
+      <div className="dialog__heading">
+        <h4 className="dialog__title">{title}</h4>
+        <button className="dialog__close-btn" onClick={onClose}>
+          +
+        </button>
+      </div>
+      <div class="dialog__content">{children}</div>
     </div>
-    <div class="dialog__content">
-      <!-- Dialog children -->
-      <p>Use immutable array methods to work with data. It will help to avoid bugs</p>
-    </div>
-  </div>
+  );
+};
+
+Dialog.PropTypes = {
+  isOpen: PropTypes.bool,
+  children: PropTypes.element.isRequired,
+  title: PropTypes.string,
+  onClose: PropTypes.func.isRequired,
+};
+
+Dialog.defaultProps = {
+  isOpen: false,
+  title: '',
+};
+
+export default Dialog;
