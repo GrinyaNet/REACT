@@ -2,22 +2,6 @@ import React, { Component } from 'react';
 import Expand from './Expand.jsx';
 
 class App extends Component {
-  // state = {
-  //   isOpen: false,
-  // };
-
-  // showDialog = () => {
-  //   if (!this.state.isOpen) {
-  //     this.setState({
-  //       isOpen: true,
-  //     });
-  //   } else {
-  //     this.setState({
-  //       isOpen: false,
-  //     });
-  //   }
-  // };
-
   render() {
     return (
       <div className="app">
