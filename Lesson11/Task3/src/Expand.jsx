@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 
 
-const Expand = ({ children, title }) => {
+class Expand extends Component  {
+  //{ children, title } = this.props;
+//const Expand = ({ children, title }) => {
   
   state = {
     isOpen: false,
@@ -18,32 +20,43 @@ const Expand = ({ children, title }) => {
       });
     }
   };
-
-  if (isOpen) {
-    const element = (
+render() {
+  return (
+  //if (this.state.isOpen) {
+    //const element = (
       <div className="expand border">
         <div className="expand__header">
-          <span className="expand__title">{title}</span>
-          <button className="expand__toggle-btn" onClick={showDialog}>
-            <i className="fa fa-chevron-up" aria-hidden="true"></i>
+          <span className="expand__title">{this.props.title}</span>
+          <button className="expand__toggle-btn" onClick={this.showDialog}>
+            {this.state.isOpen ? (
+              <i className="fas fa-chevron-up" />
+            ) : (
+              <i className="fas fa-chevron-down" />
+            )}
           </button>
+          {/* <button className="expand__toggle-btn" onClick={this.showDialog}>            
+            <i className="fa fa-chevron-up" aria-hidden="true"></i>
+          </button> */}
         </div>
-        <div className="expand__content">{children}</div>
+        {this.state.isOpen && <div className="expand__content">{this.props.children}</div>}
+        {/* <div className="expand__content">{this.props.children}</div> */}
       </div>
-    );
-    return element;
+    //);
+    //return element;
+          )
   }
 
-  return (
-    <div className="expand border">
-      <div className="expand__header">
-        <span className="expand__title">{title}</span>
-        <button className="expand__toggle-btn" onClick={showDialog}>
-          <i className="fa fa-chevron-down" aria-hidden="true"></i>
-        </button>
-      </div>
-    </div>
-  );
+  // return (
+  //   <div className="expand border">
+  //     <div className="expand__header">
+  //       <span className="expand__title">{this.props.title}</span>
+  //       <button className="expand__toggle-btn" onClick={this.showDialog}>
+  //         <i className="fa fa-chevron-down" aria-hidden="true"></i>
+  //       </button>
+  //     </div>
+  //   </div>
+  // );
+//}
 };
 
 export default Expand;
