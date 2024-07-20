@@ -4,6 +4,7 @@ import Contacts from './Contacts.jsx';
 import Products from './Products.jsx';
 import Home from './Home.jsx';
 import { Switch } from 'react-router-dom/cjs/react-router-dom.min.js';
+import PageNotFound from './PageNotFound.jsx';
 
 const App = () => {
   return (
@@ -13,11 +14,14 @@ const App = () => {
         <Route exact path="/">
           <Home />
         </Route>
-        <Route path="products">
+        <Route path="/products">
           <Products />
         </Route>
-        <Route path="contacts">
+        <Route path="/contacts">
           <Contacts />
+        </Route>
+        <Route path="*">
+          <PageNotFound />
         </Route>
         </Switch>
       </BrowserRouter>
